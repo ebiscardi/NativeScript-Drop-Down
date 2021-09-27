@@ -55,6 +55,7 @@ export abstract class DropDownBase extends View implements DropDownDefinition {
     public accessoryViewVisible: boolean;
     public isItemsSourceIn: boolean;
     public isValueListIn: boolean;
+    public itemTextWrap: boolean = false;
 
     public abstract open();
     public abstract close();
@@ -191,3 +192,9 @@ export const itemsPaddingProperty = new Property<DropDownBase, string>({
     defaultValue: ""
 });
 itemsPaddingProperty.register(DropDownBase);
+
+export const itemTextWrapProperty = new Property<DropDownBase, string>({
+    name: "itemTextWrap",
+    defaultValue: ""
+});
+itemTextWrapProperty.register(DropDownBase);

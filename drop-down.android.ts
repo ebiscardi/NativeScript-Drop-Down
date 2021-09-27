@@ -438,7 +438,10 @@ function initializeDropDownAdapter() {
 
                 const label = view.getViewById<Label>(LABELVIEWID);
                 label.text = this.getItem(index);
-
+                
+                if (!Utils.isNullOrUndefined(owner.itemTextWrap)) {
+                    label.textWrap = owner.itemTextWrap;                    
+                }
                 // Copy root styles to view
                 if (owner.style.color) {
                     label.style.color = owner.style.color;
